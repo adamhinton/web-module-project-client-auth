@@ -21,7 +21,9 @@ const Login = () =>{
     e.preventDefault();
     axios.post('http://localhost:9000/api/login', { username: 'Bloom', password: 'Tech' })
       .then(resp =>{
-        localStorage.setItem('token', resp.payload);
+        console.log('LOGIN.js TOKEN:', resp.data.token)
+        localStorage.setItem('token', resp.data.token);
+        // console.log(resp.data.payload)
         push('/friends')
       })
       .catch(err =>{
