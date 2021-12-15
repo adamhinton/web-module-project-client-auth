@@ -24,24 +24,20 @@ const FriendsList = () =>{
   }, [])
 
   // console.log(friends)
+
+
     return (
       <div>
-            <h2>Friends List</h2>
-            <ul>
-              <li>
-              Name-Age-Email
-              </li>
-              <li>
-              Name-Age-Email
-              </li>
-              <li>
-              Name-Age-Email
-              </li>
-              <li>
-              Name-Age-Email
-              </li>
-            </ul>
+              <h2>FriendsList</h2>
+      <ul>
+        {
+          friends.map(friend =>{
+            return <li>{friend.name} = {friend.age} - {friend.email}</li>
+          })
+        }
+      </ul>
       </div>
+
     )
   }
 
